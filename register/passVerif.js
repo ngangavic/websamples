@@ -7,6 +7,7 @@ function passwordVerify() {
         document.getElementById("passwordError").innerHTML = "Password do not match";
         document.getElementById("passwordError").style.backgroundColor = "red";
         document.getElementById("passwordError").style.color = "white";
+        document.getElementById("myBtn").disabled = true;
     } else {
         document.getElementById("passwordError").innerHTML = "Passwords match";
         document.getElementById("passwordError").style.backgroundColor = "green";
