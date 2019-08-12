@@ -59,7 +59,7 @@ if($info=='empty'){
 </div>
 
 <div class="form-group">
-<button type="submit" class="btn btn-block btn-success" name="register" >Register</button>
+<button id="myBtn" type="submit" class="btn btn-block btn-success" name="register" >Register</button>
 </div>
 
 <div class="form-group login" >
