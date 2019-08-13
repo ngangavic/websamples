@@ -12,5 +12,6 @@ function passwordVerify() {
         document.getElementById("passwordError").innerHTML = "Passwords match";
         document.getElementById("passwordError").style.backgroundColor = "green";
         document.getElementById("passwordError").style.color = "white";
+        document.getElementById("myBtn").disabled = false;
     }
 }
