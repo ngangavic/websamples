@@ -1,5 +1,5 @@
 # websamples
-Available modeules
+Available modules
 ==================
 
 1.Login
