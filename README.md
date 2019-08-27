@@ -6,7 +6,7 @@ Available modeules
 
 2.Register
 
-3.Ajax insert and display
+3.Ajax insert,display and delete
 
 
 
