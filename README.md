@@ -1,5 +1,17 @@
 # websamples
+Available modeules
+==================
+
+1.Login
+
+2.Register
+
+3.Ajax insert and display
+
+
+
 Requirements:
+=============
 
 1.Xampp server
 
@@ -10,8 +22,9 @@ Requirements:
 4.Web browser
 
 Database configuration:
+=======================
 
 1.Create a database
 
-2.Import the websample.sql
+2.Import the websample(2) in the connection directory.sql
 
