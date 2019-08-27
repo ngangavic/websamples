@@ -24,7 +24,7 @@ $result = $statement->fetchAll();
     <div class="container" id="c">
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 offset-md-3 top">
 <h3>AJAX INSERT</h3>
-<div class="form">
+<div class="form" id="fm">
     <form method="POST" role="form" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 fm" id="add_details">
         <div class="form-group">
     <label>Name: </label>
@@ -41,36 +41,40 @@ $result = $statement->fetchAll();
 </div>
 </div>
 
-<div id="txtHint"></div>
-
-<table class="table">
+<div id="tbl"> 
+<table class="table" id="tb">
     <thead>
         <tr>
             <th>Name</th>
             <th>Email</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody id="table_data">
         <?php
     foreach($result as $row)
     {
+        $id=$row['id'];
      echo '
      <tr>
       <td>'.$row["name"].'</td>
       <td>'.$row["email"].'</td>
+      <td><button type="submit" class="btn btn-danger" id="delete" value="'.$id.'">Delete</button></td>
      </tr>
      ';
     }
     ?>
     </tbody>
 </table>
+</div>
 
 </body>
 </html>
 
 <script>
 $(document).ready(function(){
- 
+
+ //add
  $('#add_details').on('submit', function(event){
   event.preventDefault();
   $.ajax({
@@ -90,9 +94,38 @@ $(document).ready(function(){
      html += '<td>'+data.email+'</td></tr>';
      $('#table_data').prepend(html);
      $('#add_details')[0].reset();
+     $("#c").load(location.href+"#c");
     }
    }
-  })
+  })  
+ });
+
+ // Delete 
+ $('#delete').click(function(){
+   var el = this;
+   var id = $(this).val();
+  // alert(id);
+   $.ajax({
+     url: 'remove.php',
+     type: 'POST',
+     data: { id:id },
+     success: function(response){
+
+       if(response == 1){
+     // Remove row from HTML Table
+    
+     $(el).closest('tr').css('background','tomato');
+     $(el).closest('tr').fadeOut(800,function(){
+        $(this).remove();
+     });
+        $("#c").load(location.href+"#c");
+      }else{
+     alert('Invalid ID.');
+      }
+
+    }
+   });
+
  });
  
 });
