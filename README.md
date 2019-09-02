@@ -10,6 +10,8 @@ Available modules
 
 4.Countdown timer
 
+5.Loading image before web page loads
+
 
 
 Requirements:
