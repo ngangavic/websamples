@@ -1,0 +1,33 @@
+.body{
+	background-color: #0d0d0d;
+}
+.days h3{
+	color: #ff3333;
+}
+.days h6{
+	color: #ffffff;
+}
+.hours h3{
+	color: #ff8000;
+}
+.hours h6{
+	color: #ffffff;
+}
+.min h3{
+	color: #ffd11a;
+}
+.min h6{
+	color: #ffffff;
+}
+.sec h3{
+	color: #00cc00;
+}
+.sec h6{
+	color: #ffffff;
+}
+.align{
+	line-height: 200px;
+}
+.timer{
+	color: #ff3333;
+}

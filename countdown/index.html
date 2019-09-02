@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Count Down Timer</title>
+	<link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" href="../bootstrap-4.3.1/css/bootstrap.min.css">
+    <script src="../bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="countDown.js"></script>
+</head>
+<body class="body" onload="makeTimer()">
+
+<div class="align" id="a">
+<div class="row justify-content-center">
+	<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 days" >
+	<h3 id="days"></h3>
+	<h6>Days</h6>
+</div>
+	<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 hours" >
+	<h3 id="hours"></h3>
+	<h6>Hours</h6>
+</div>
+	<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 min" >
+	<h3 id="min"></h3>
+	<h6>Minutes</h6>
+</div>
+	<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 sec" >
+	<h3 id="sec"></h3>
+	<h6>Seconds</h6>
+</div>
+</div>
+</div>
+
+<div class="row justify-content-center" >
+<div class="alert alert-danger " id="timer" style="display: none">
+  <strong>Expired!</strong> Time Over.
+</div>
+<div>
+
+</body>
+</html>
