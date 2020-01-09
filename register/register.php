@@ -24,6 +24,7 @@ if(isset($_POST['register'])){
         header("location:index.php?info=exists");
         }else{
         //insert data to database
+            $password=password_hash($password,PASSWORD_DEFAULT);
         $stmt=$conn->prepare("INSERT INTO tbl_register(name,email,password,date)VALUES(?,?,?,CURRENT_TIMESTAMP)");
         $stmt->bind_param("sss",$name,$email,$password);
         if(!$stmt->execute()){
