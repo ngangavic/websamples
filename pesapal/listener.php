@@ -1,10 +1,10 @@
 <?php
 include_once('OAuth.php');
-$consumer_key="pZcFH6BBdOIrCf7UCfcd5i+1qetdsc9n";//Register a merchant account on
+$consumer_key="";//Register a merchant account on
 //demo.pesapal.com and use the merchant key for testing.
 //When you are ready to go live make sure you change the key to the live account
 //registered on www.pesapal.com!
-$consumer_secret="X92A4mL0nK3aV/7DluCU4IDC19w=";// Use the secret from your test
+$consumer_secret="";// Use the secret from your test
 //account on demo.pesapal.com. When you are ready to go live make sure you
 //change the secret to the live account registered on www.pesapal.com!
 $statusrequestAPI = 'https://demo.pesapal.com/api/querypaymentstatus';//change to

@@ -2,8 +2,8 @@
 include_once('OAuth.php');
 
 $token = $params = NULL;
-$consumer_key = 'pZcFH6BBdOIrCf7UCfcd5i+1qetdsc9n';
-$consumer_secret = 'X92A4mL0nK3aV/7DluCU4IDC19w=';
+$consumer_key = '';
+$consumer_secret = '';
 $signature_method = new OAuthSignatureMethod_HMAC_SHA1();
 $iframelink = 'https://demo.pesapal.com/api/PostPesapalDirectOrderV4';
 
