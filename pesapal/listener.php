@@ -1,19 +1,14 @@
 <?php
 include_once('OAuth.php');
-$consumer_key="";//Register a merchant account on
-//demo.pesapal.com and use the merchant key for testing.
-//When you are ready to go live make sure you change the key to the live account
-//registered on www.pesapal.com!
-$consumer_secret="";// Use the secret from your test
-//account on demo.pesapal.com. When you are ready to go live make sure you
-//change the secret to the live account registered on www.pesapal.com!
+$consumer_key = '';
+$consumer_secret = '';
 $statusrequestAPI = 'https://demo.pesapal.com/api/querypaymentstatus';//change to
 //https://www.pesapal.com/api/querypaymentstatus' when you are ready to go live!
 
 // Parameters sent to you by PesaPal IPN
-$pesapalNotification=$_GET['pesapal_notification_type'];
-$pesapalTrackingId=$_GET['pesapal_transaction_tracking_id'];
-$pesapal_merchant_reference=$_GET['pesapal_merchant_reference'];
+$pesapalNotification='CHANGE';
+$pesapalTrackingId='';
+$pesapal_merchant_reference='';
 
 if($pesapalNotification=="CHANGE" && $pesapalTrackingId!='')
 {

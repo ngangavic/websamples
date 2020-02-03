@@ -17,7 +17,7 @@ $last_name = 'last_name'; //[optional]
 $email = "ngangavictor10@gmail.com";
 $phonenumber = ''; //ONE of email or phonenumber is required
 
-$callback_url = 'http://127.0.0.1/websamples/action.php'; //redirect url, the page that will handle the response from pesapal.
+$callback_url = ''; //redirect url, the page that will handle the response from pesapal.
 $post_xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><PesapalDirectOrderInfo xmlns:xsi=\"http://www.w3.org/2001/XMLSchemainstance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" Amount=\"".$amount."\" Description=\"".$desc."\" Type=\"".$type."\" Reference=\"".$reference."\" FirstName=\"".$first_name."\" LastName=\"".$last_name."\" Email=\"".$email."\" PhoneNumber=\"".$phonenumber."\" xmlns=\"http://www.pesapal.com\" />";
 $post_xml = htmlentities($post_xml);
 
