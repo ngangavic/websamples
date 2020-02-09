@@ -48,15 +48,7 @@ if($pesapalNotification=="CHANGE" && $pesapalTrackingId!='')
 
     curl_close ($ch);
 
-    //UPDATE YOUR DB TABLE WITH NEW STATUS FOR TRANSACTION WITH pesapal_transaction_tracking_id $pesapalTrackingId
+    echo $status;
 
-    if(DB_UPDATE_IS_SUCCESSFUL)
-    {
-        $resp="pesapal_notification_type=$pesapalNotification&pesapal_transaction_tracking_id=$pesapalTrackingId&pesapal_merchant_reference=$pesapal_merchant_reference";
-        ob_start();
-        echo $resp;
-        ob_flush();
-        exit;
-    }
 }
 ?>
