@@ -12,6 +12,7 @@ Available modules
 
 5.Loading image before web page loads
 
+6.PHP Send mail
 
 
 Requirements:
