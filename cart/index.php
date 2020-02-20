@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+//database connection
+$link=mysqli_connect("localhost","root","","websamples")
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,6 +69,16 @@ if(isset($_POST['index_to_remove']) && $_POST['index_to_remove']!=""){
         sort($_SESSION["cart"]);
     }
 }
+
+//render cart
+$cartOutput="";
+$cartTotal=0;
+$totalCost = 0;
+$discount = 0;
+$x='';
+$customer ='';
+$pp_checkout_btn="";
+
 
 ?>
 
