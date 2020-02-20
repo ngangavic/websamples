@@ -46,6 +46,13 @@ if(isset($_POST['id'])){
     header("location: index.php");
     exit();
 }
+
+
+//clear cart
+if(isset($_GET['cmd'])&& $_GET['cmd']=="emptycart"){
+    unset($_SESSION["cart"]);
+}
+
 ?>
 
 <div class="container-fluid">
@@ -204,7 +211,10 @@ if(isset($_POST['id'])){
                     <td colspan="2" ></td>
                     <td><b>Total:</b> Ksh. 50000</td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-success">CheckOut</a>
+                        <div class="btn-group">
+                        <a href="#" class="btn btn-sm btn-group-sm btn-success">CheckOut</a>
+                        <a href="index.php?cmd=emptycart" class="btn btn-sm btn-group-sm btn-warning">Clear</a>
+                        </div>
                     </td>
                 </tr>
 
