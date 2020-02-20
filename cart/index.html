@@ -9,10 +9,47 @@
 
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Simple Cart</title>
 </head>
 <body>
 
+<div class="container-fluid">
+
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+        <h3 class="title">Simple Cart</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <img src="images/Spark-Kids-Laptop.jpg" class="card-img" width="150" height="150">
+                </div>
+                <div class="card-footer">
+                    <form method="post" action="">
+                        <p>Kids Laptop<br/>
+                            <b>Ksh. 10000</b>
+                        </p>
+                        <div class="row">
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                        <div class="form-group">
+                            <input type="number" class="form-control form-control-sm" value="1" name="qty" >
+                        </div>
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-sm btn-success" name="add">Add to Cart</button>
+                        </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
