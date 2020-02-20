@@ -39,10 +39,10 @@ if (isset($_POST['id'])) {
                     //That item ps in cart already so lets adjust its quantity using array_splice()
                     array_splice($_SESSION["pos"], $i - 1, 1, array(array("item_id" => $pid, "quantity" => $each_item['quantity'] + 1)));
                     $wasFound = true;
-                }//close if condition
-            }//close while loop
+                }
+            }
 
-        }//close foreach loop
+        }
         if ($wasFound == false) {
             array_push($_SESSION["cart"], array("item_id" => $pid, "quantity" => 1));
         }
@@ -121,26 +121,54 @@ if (!isset($_SESSION["cart"]) || count($_SESSION["cart"]) < 1) {
             $cartOutput .= '</tr>';
             $i++;
         } else {
-
             $cartOutput = "<h2 align='center'>The Item is locked</h2>";
             header("location: index.php?cmd=emptycart");
-            ?>
-            <script>
-                alert("The Item is locked");
-            </script>
-            <?php
-
         }
     }
 }
 
+//adjust cart qty
+if(isset($_POST['item_to_adjust'])&& $_POST['item_to_adjust']!=""){
+
+    $item_to_adjust=$_POST['item_to_adjust'];
+    $quantity=$_POST['quantity'];
+    $quantity = preg_replace('#[^0-9]#i','',$quantity);//filter everything but numbers
+    if($quantity>=100){
+        $quantity = 99;
+
+        if($quantity<1){
+            $quantity = 1;
+        }
+
+    }
+    $i=0;
+    foreach($_SESSION["cart"]as $each_item){
+        $i++;
+        while(list($key, $value)=each($each_item)){
+            if($key=="item_id" && $value==$item_to_adjust){
+                //That item ps in cart already so lets adjust its quantity using array_splice()
+                array_splice($_SESSION["cart"], $i-1,1, array(array("item_id"=>$item_to_adjust, "quantity"=>$quantity)));
+                $wasFound=true;
+            }
+        }
+
+    }
+
+    header("location: index.php");
+}
 
 ?>
 
 <div class="container-fluid">
 
     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-        <h3 class="title">Products List<?php echo count($_SESSION["cart"]); ?></h3>
+        <h3 class="title">Products List<?php
+            if (isset($_SESSION["cart"])){
+                echo count($_SESSION["cart"]);
+            }else{
+
+            }
+             ?></h3>
     </div>
 
     <div class="row">
@@ -278,7 +306,7 @@ if (!isset($_SESSION["cart"]) || count($_SESSION["cart"]) < 1) {
                 </tr>
                 <tr>
                     <td colspan="0"></td>
-                    <td><b>Total:</b> Ksh. <?php number_format($pricetotal, 0); ?>
+                    <td><b>Total:</b> Ksh. <?php //number_format($pricetotal, 0); ?>
 
                         <div class="btn-group">
                             <a href="#" class="btn btn-sm btn-group-sm btn-success">CheckOut</a>
