@@ -162,13 +162,7 @@ if(isset($_POST['item_to_adjust'])&& $_POST['item_to_adjust']!=""){
 <div class="container-fluid">
 
     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-        <h3 class="title">Products List<?php
-            if (isset($_SESSION["cart"])){
-                echo count($_SESSION["cart"]);
-            }else{
-
-            }
-             ?></h3>
+        <h3 class="title">Products List</h3>
     </div>
 
     <div class="row">
@@ -306,7 +300,7 @@ if(isset($_POST['item_to_adjust'])&& $_POST['item_to_adjust']!=""){
                 </tr>
                 <tr>
                     <td colspan="0"></td>
-                    <td><b>Total:</b> Ksh. <?php //number_format($pricetotal, 0); ?>
+                    <td><b>Total:</b> Ksh. <?php echo number_format($cartTotal, 0); ?>
 
                         <div class="btn-group">
                             <a href="#" class="btn btn-sm btn-group-sm btn-success">CheckOut</a>
