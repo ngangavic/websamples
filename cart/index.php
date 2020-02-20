@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +17,41 @@
 </head>
 <body>
 
+<?php
+if(isset($_POST['id'])){
+    $pid = $_POST['id'];
+    $wasFound =false;
+    $i = 0;
+    //if the cart session variable is not set or cart array is empty
+    if(!isset($_SESSION["cart"])||count($_SESSION["cart"])<1){
+        //Run if the cart is empty or not set
+        $_SESSION["cart"]=array(1=>array("item_id"=>$pid, "quantity" =>1));
+    }else{
+        //Run if the cart has atleast one item in it
+        foreach($_SESSION["cart"]as $each_item){
+            $i++;
+            while(list($key, $value)=each($each_item)){
+                if($key=="item_id" && $value==$pid){
+                    //That item ps in cart already so lets adjust its quantity using array_splice()
+                    array_splice($_SESSION["pos"], $i-1,1, array(array("item_id"=>$pid, "quantity"=>$each_item['quantity']+1)));
+                    $wasFound=true;
+                }//close if condition
+            }//close while loop
+
+        }//close foreach loop
+        if($wasFound==false){
+            array_push($_SESSION["cart"], array("item_id" => $pid, "quantity"=>1));
+        }
+    }
+    header("location: index.php");
+    exit();
+}
+?>
+
 <div class="container-fluid">
 
     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-        <h3 class="title">Products List</h3>
+        <h3 class="title">Products List<?php echo count($_SESSION["cart"]); ?></h3>
     </div>
 
     <div class="row">
@@ -29,6 +63,7 @@
                 </div>
                 <div class="card-footer">
                     <form method="post" action="">
+                        <input type="hidden" class="form-control form-control-sm" value="1" name="id" >
                         <p>Kids Laptop<br/>
                             <b>Ksh. 10000</b>
                         </p>
@@ -56,6 +91,7 @@
                 </div>
                 <div class="card-footer">
                     <form method="post" action="">
+                        <input type="hidden" class="form-control form-control-sm" value="2" name="id" >
                         <p>Ear Phones<br/>
                             <b>Ksh. 500</b>
                         </p>
@@ -83,6 +119,7 @@
                 </div>
                 <div class="card-footer">
                     <form method="post" action="">
+                        <input type="hidden" class="form-control form-control-sm" value="3" name="id" >
                         <p>Phone<br/>
                             <b>Ksh. 15000</b>
                         </p>
@@ -110,6 +147,7 @@
                 </div>
                 <div class="card-footer">
                     <form method="post" action="">
+                        <input type="hidden" class="form-control form-control-sm" value="4" name="id" >
                         <p>6TB Internal Drive<br/>
                             <b>Ksh. 10000</b>
                         </p>
