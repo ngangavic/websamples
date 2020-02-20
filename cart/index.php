@@ -113,7 +113,7 @@ if (!isset($_SESSION["cart"]) || count($_SESSION["cart"]) < 1) {
 			<input type="hidden" name="item_to_adjust" value="' . $item_id . '" />
 			</form></td>';
             $cartOutput .= '<td>KES ' . $price . '</td>';
-//            $cartOutput .= '<td>KES ' . number_format($pricetotal, 0) . '</td>';
+            $cartOutput .= '<td>KES ' . number_format($pricetotal, 0) . '</td>';
             $cartOutput .= '<td><form action="" method="post">
 			<input class="btn btn-danger" type="submit" value="X" name="deleteBtn' . $item_id . '" />
 			<input type="hidden" name="index_to_remove" value="' . $i . '" />
@@ -291,6 +291,7 @@ if(isset($_POST['item_to_adjust'])&& $_POST['item_to_adjust']!=""){
                 <th>Name</th>
                 <th>Quantity</th>
                 <th>Amount</th>
+                <th>Total</th>
                 <th>Action</th>
                 </thead>
                 <tbody>
@@ -298,9 +299,17 @@ if(isset($_POST['item_to_adjust'])&& $_POST['item_to_adjust']!=""){
                 <tr>
                     <?php echo $cartOutput; ?>
                 </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cart-total">
+            <table>
+                <tbody>
                 <tr>
                     <td colspan="0"></td>
-                    <td><b>Total:</b> Ksh. <?php echo number_format($cartTotal, 0); ?>
+                    <td><b>Cart Total:</b> Ksh. <?php echo number_format($cartTotal, 0); ?>
 
                         <div class="btn-group">
                             <a href="#" class="btn btn-sm btn-group-sm btn-success">CheckOut</a>
@@ -308,10 +317,10 @@ if(isset($_POST['item_to_adjust'])&& $_POST['item_to_adjust']!=""){
                         </div>
                     </td>
                 </tr>
-
                 </tbody>
             </table>
         </div>
+
     </div>
 
 </div>
