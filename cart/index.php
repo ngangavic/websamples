@@ -53,6 +53,19 @@ if(isset($_GET['cmd'])&& $_GET['cmd']=="emptycart"){
     unset($_SESSION["cart"]);
 }
 
+//remove item from cart
+if(isset($_POST['index_to_remove']) && $_POST['index_to_remove']!=""){
+    //access the array and run code to remove that array index
+    $key_to_remove = $_POST['index_to_remove'];
+    if(count($_SESSION["cart"])<=1){
+        unset($_SESSION["cart"]);
+
+    }else{
+        unset($_SESSION["cart"]["$key_to_remove"]);
+        sort($_SESSION["cart"]);
+    }
+}
+
 ?>
 
 <div class="container-fluid">
