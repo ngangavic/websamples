@@ -1,5 +1,6 @@
 <?php
 require "dbConnection.php";
+include "send-mail.php";
 session_start();
 unset($_SESSION['cdr']);
 if (isset($_POST['signup']) && isset($_POST['phone']) && isset($_POST['email'])) {
@@ -27,10 +28,12 @@ if (isset($_POST['signup']) && isset($_POST['phone']) && isset($_POST['email']))
             header("location: register.php?msg=Error");
         } else {
             //success
-        setcookie("credential",$password);
+//        setcookie("credential",$password);
 //            mail($email, "New Account", "You have successfully registered. Here is your password: " . $password);
 //            $_SESSION['credential'] = $password;
-            header("location: dashboard.php");
+//            header("location: dashboard.php");
+            $msg="Welcome! \n You just created an account. Your password is ".$password;
+            newMail($email,$msg);
         }
     }
 } else {
