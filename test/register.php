@@ -15,6 +15,13 @@
         <div class="card" style="margin-top: 50px">
             <div class="card-header">
                 <h5>Sign Up</h5>
+                <?php
+                if (isset($_GET['msg'])){
+                ?>
+                <div class="alert alert-warning">
+                    <strong><?php echo $_GET['msg'] ?></strong>
+                </div>
+                <?php } ?>
             </div>
             <div class="card-body">
                 <form action="signup.php" method="post">
