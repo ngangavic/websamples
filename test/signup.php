@@ -8,21 +8,22 @@ if (isset($_POST['signup']) && isset($_POST['phone']) && isset($_POST['email']))
     $email = $_POST['email'];
 
     $password=generatePassword();
-    $passHash=password_hash($password,PASSWORD_DEFAULT);
+//    $passHash=password_hash($password,PASSWORD_DEFAULT);
 
     $stmt = $conn->prepare("INSERT INTO tbl_details(email,phone,password,dateReg)VALUES(?,?,?,CURRENT_TIMESTAMP)");
-    $stmt->bind_param("sss", $email, $phone, $passHash);
+    $stmt->bind_param("sss", $email, $phone, $password);
     if (!$stmt->execute()) {
         //error
-        header("location: index.html?msg=error");
+        header("location: register.html?msg=error");
     } else {
         //success
-        header("location: index.html?msg=success");
+        setcookie("credential",$password);
+        header("location: dashboard.php");
     }
 
 } else {
     //error
-    header("location: index.html?msg=error");
+    header("location: register.html?msg=error");
 }
 
 function generatePassword(){
