@@ -15,6 +15,13 @@
         <div class="card" style="margin-top: 50px">
             <div class="card-header">
                 <h5>Sign In</h5>
+                <?php
+                if (isset($_GET['msg'])){
+                    ?>
+                    <div class="alert alert-warning">
+                        <strong><?php echo $_GET['msg'] ?></strong>
+                    </div>
+                <?php } ?>
             </div>
             <div class="card-body">
                 <form action="signin.php" method="post">
@@ -26,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" name="signin" class="btn btn-block btn-outline-success">Sign In</button>
-                        <a href="register.html" class="btn btn-block btn-outline-info">Sign Up</a>
+                        <a href="register.php" class="btn btn-block btn-outline-info">Sign Up</a>
                     </div>
                 </form>
             </div>

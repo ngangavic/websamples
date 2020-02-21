@@ -17,6 +17,10 @@ require "dbConnection.php";
 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topbar" style="padding: 10px">
         My Dashboard
+        <div class="btn btn-group btn-group-sm">
+        <a href="index.php" class="btn btn-sm btn-dark">Login</a>
+        <a href="register.php" class="btn btn-sm btn-light">Register</a>
+        </div>
     </div>
 
     <div class="card">

@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" name="signup" class="btn btn-block btn-outline-success">Sign Up</button>
-                        <a href="index.html" class="btn btn-block btn-outline-info">Sign In</a>
+                        <a href="index.php" class="btn btn-block btn-outline-info">Sign In</a>
                     </div>
                 </form>
             </div>
