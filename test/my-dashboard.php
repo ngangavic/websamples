@@ -1,3 +1,6 @@
+<?php
+require "dbConnection.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,15 +26,22 @@
                 <th>#</th>
                 <th>Email</th>
                 <th>Phone</th>
-                <th>Date Of Reg</th>
+                <th>Date Of Registration</th>
                 </thead>
                 <tbody>
+                <?php
+                $stmt=$conn->prepare("SELECT * FROM tbl_details");
+                $stmt->execute();
+                $result=$stmt->get_result();
+                while ($row=$result->fetch_array()){
+                ?>
                 <tr>
-                    <td>#</td>
-                    <td>Email</td>
-                    <td>Phone</td>
-                    <td>Date Of Reg</td>
+                    <td><?php echo $row['id'] ?></td>
+                    <td><?php echo $row['email'] ?></td>
+                    <td><?php echo $row['phone'] ?></td>
+                    <td><?php echo $row['dateReg'] ?></td>
                 </tr>
+                <?php } ?>
                 </tbody>
             </table>
         </div>
