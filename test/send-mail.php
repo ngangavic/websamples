@@ -1,7 +1,9 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-function newMail($address,$msg)
+
+function newMail($address, $msg)
 {
     require "PHPMailer/src/PHPMailer.php";
     require "PHPMailer/src/Exception.php";
@@ -22,9 +24,8 @@ function newMail($address,$msg)
     $mail->Body = $msg;
     if (!$mail->send()) {
         echo 'Message was not sent.';
-        echo 'Mailer error: ' . $mail->ErrorInfo;
+        header("location: register.php?msg=Email was not sent.");
     } else {
-//        echo 'Message has been sent.';
         header("location: register.php?msg=Account created check your email.");
     }
 }
