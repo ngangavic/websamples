@@ -18,8 +18,8 @@ require "dbConnection.php";
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topbar" style="padding: 10px">
         My Dashboard
         <div class="btn btn-group btn-group-sm">
-        <a href="index.php" class="btn btn-sm btn-dark">Login</a>
-        <a href="register.php" class="btn btn-sm btn-light">Register</a>
+            <a href="index.php" class="btn btn-sm btn-dark">Login</a>
+            <a href="register.php" class="btn btn-sm btn-light">Register</a>
         </div>
     </div>
 
@@ -34,17 +34,17 @@ require "dbConnection.php";
                 </thead>
                 <tbody>
                 <?php
-                $stmt=$conn->prepare("SELECT * FROM tbl_details");
+                $stmt = $conn->prepare("SELECT * FROM tbl_details");
                 $stmt->execute();
-                $result=$stmt->get_result();
-                while ($row=$result->fetch_array()){
-                ?>
-                <tr>
-                    <td><?php echo $row['id'] ?></td>
-                    <td><?php echo $row['email'] ?></td>
-                    <td><?php echo $row['phone'] ?></td>
-                    <td><?php echo $row['dateReg'] ?></td>
-                </tr>
+                $result = $stmt->get_result();
+                while ($row = $result->fetch_array()) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row['id'] ?></td>
+                        <td><?php echo $row['email'] ?></td>
+                        <td><?php echo $row['phone'] ?></td>
+                        <td><?php echo $row['dateReg'] ?></td>
+                    </tr>
                 <?php } ?>
                 </tbody>
             </table>

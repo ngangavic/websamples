@@ -16,7 +16,7 @@
             <div class="card-header">
                 <h5>Sign In</h5>
                 <?php
-                if (isset($_GET['msg'])){
+                if (isset($_GET['msg'])) {
                     ?>
                     <div class="alert alert-warning">
                         <strong><?php echo $_GET['msg'] ?></strong>
@@ -26,7 +26,8 @@
             <div class="card-body">
                 <form action="signin.php" method="post">
                     <div class="form-group">
-                        <input type="text" name="email_phone" class="form-control" placeholder="Email or Phone" required>
+                        <input type="text" name="email_phone" class="form-control" placeholder="Email or Phone"
+                               required>
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" class="form-control" placeholder="Password" required>

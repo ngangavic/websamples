@@ -1,11 +1,11 @@
 <?php
-$dbName="test";
-$uName="root";
-$pWord="";
-$host="localhost";
+$dbName = "test";
+$uName = "root";
+$pWord = "";
+$host = "localhost";
 
-$conn=mysqli_connect($host,$uName,$pWord,$dbName);
+$conn = mysqli_connect($host, $uName, $pWord, $dbName);
 
-if (!$conn){
+if (!$conn) {
     echo 'Database connection failed';
 }

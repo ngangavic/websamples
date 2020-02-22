@@ -17,31 +17,31 @@ session_start();
 <div class="container-fluid">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topbar" style="padding: 10px">
         <div class="row">
-        <h4>Dashboard</h4>
+            <h4>Dashboard</h4>
             <div class="btn btn-group btn-group-sm">
-        <a href="logout.php" class="btn btn-sm  btn-danger">Logout</a>
-        <a href="my-dashboard.php" class="btn btn-sm btn-info">Report</a>
+                <a href="logout.php" class="btn btn-sm  btn-danger">Logout</a>
+                <a href="my-dashboard.php" class="btn btn-sm btn-info">Report</a>
             </div>
         </div>
     </div>
     <?php
-    if (isset($_SESSION['cdr'])){
-        $stmt=$conn->prepare("SELECT * FROM tbl_details WHERE id=?");
-        $stmt->bind_param("s",$_SESSION['cdr']);
+    if (isset($_SESSION['cdr'])) {
+        $stmt = $conn->prepare("SELECT * FROM tbl_details WHERE id=?");
+        $stmt->bind_param("s", $_SESSION['cdr']);
         $stmt->execute();
-        $result=$stmt->get_result();
-        $row=$result->fetch_array();
-    ?>
-    <div class="card">
-        <div class="card-body">
-            <div class="alert alert-success">
-                <strong>Welcome!</strong>
-                <strong>Your email:<?php echo $row['email'] ?></strong>
-                <strong>Your phone:<?php echo $row['phone'] ?></strong>
+        $result = $stmt->get_result();
+        $row = $result->fetch_array();
+        ?>
+        <div class="card">
+            <div class="card-body">
+                <div class="alert alert-success">
+                    <strong>Welcome!</strong>
+                    <strong>Your email:<?php echo $row['email'] ?></strong>
+                    <strong>Your phone:<?php echo $row['phone'] ?></strong>
+                </div>
             </div>
         </div>
-    </div>
-    <?php }else if (isset($_COOKIE['credential'])){
+    <?php } else if (isset($_COOKIE['credential'])) {
         ?>
         <div class="card">
             <div class="card-body">
@@ -51,7 +51,7 @@ session_start();
                 </div>
             </div>
         </div>
-    <?php
+        <?php
     } ?>
 
 
