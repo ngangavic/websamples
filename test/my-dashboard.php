@@ -25,7 +25,7 @@ require "dbConnection.php";
 
     <div class="card">
         <div class="card-body">
-            <table class="table">
+            <table class="table table-responsive">
                 <thead>
                 <th>#</th>
                 <th>Email</th>
@@ -48,6 +48,7 @@ require "dbConnection.php";
                 <?php } ?>
                 </tbody>
             </table>
+            <a href="pdf/generate.php" class="btn btn-sm btn-success">Print</a>
         </div>
     </div>
 
