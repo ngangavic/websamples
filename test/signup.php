@@ -19,19 +19,15 @@ if (isset($_POST['signup']) && isset($_POST['phone']) && isset($_POST['email']))
     } else {
 
         $password = generatePassword();
-//    $passHash=password_hash($password,PASSWORD_DEFAULT);
+    $passHash=password_hash($password,PASSWORD_DEFAULT);
 
         $stmt = $conn->prepare("INSERT INTO tbl_details(email,phone,password,dateReg)VALUES(?,?,?,CURRENT_TIMESTAMP)");
-        $stmt->bind_param("sss", $email, $phone, $password);
+        $stmt->bind_param("sss", $email, $phone, $passHash);
         if (!$stmt->execute()) {
             //error
             header("location: register.php?msg=Error");
         } else {
             //success
-//        setcookie("credential",$password);
-//            mail($email, "New Account", "You have successfully registered. Here is your password: " . $password);
-//            $_SESSION['credential'] = $password;
-//            header("location: dashboard.php");
             $msg="Welcome! \n You just created an account. Your password is ".$password;
             newMail($email,$msg);
         }
