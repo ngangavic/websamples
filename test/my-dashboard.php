@@ -48,7 +48,7 @@ require "dbConnection.php";
                 <?php } ?>
                 </tbody>
             </table>
-            <a href="pdf/generate.php" class="btn btn-sm btn-success">Print</a>
+            <a href="pdf/generate.php" target="_blank" class="btn btn-sm btn-success">Print</a>
         </div>
     </div>
 
