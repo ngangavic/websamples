@@ -14,6 +14,8 @@ Available modules
 
 6.PHP Send mail
 
+7. Shopping cart(Not complete)
+
 
 Requirements:
 =============
