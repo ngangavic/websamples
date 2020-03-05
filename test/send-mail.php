@@ -8,13 +8,14 @@ function newMail($address, $msg)
     require "PHPMailer/src/PHPMailer.php";
     require "PHPMailer/src/Exception.php";
     require "PHPMailer/src/SMTP.php";
+    require "database/secrets.php";//contains gmail username and password
 
     $mail = new PHPMailer(true);
     $mail->isSMTP();
     $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
-    $mail->Username = "ngangavictor10@gmail.com";
-    $mail->Password = "";
+    $mail->Username = $gmail_uname;
+    $mail->Password = $gmail_password;
     $mail->SMTPSecure = "tsl";
     $mail->Port = "587";
 
