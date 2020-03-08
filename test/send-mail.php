@@ -25,10 +25,8 @@ function newMail($address, $msg)
     $mail->Body = $msg;
     if (!$mail->send()) {
 //        echo 'Message was not sent.';
-        echo json_encode(array('report' => '1'));
-//        header("location: register.php?msg=Email was not sent.");
+        header("location: register.php?msg=Email was not sent.");
     } else {
-        echo json_encode(array('report' => '0'));
-//        header("location: register.php?msg=Account created check your email.");
+        header("location: register.php?msg=Account created check your email.");
     }
 }
