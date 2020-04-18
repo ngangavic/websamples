@@ -27,7 +27,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td>John Doe </td>
                         <td>Form 1</td>
                         <td>15</td>
@@ -169,7 +169,7 @@
                                 <a href="#" class="btn btn-sm btn-danger">Delete</a>
                             </div>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
@@ -186,10 +186,32 @@
         src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
     <script>
         $(document).ready(function () {
-            // $('#student-table').DataTable();
+
             $('#student-table').DataTable({
-                responsive: true
+                responsive: true,
+                serverSide: true,
+                ajax: {
+                    url: 'fetch-data.php',
+                    type: 'POST'
+                },
+                columns: [
+                    { "data": 'name' },
+                    { "data": 'class' },
+                    { "data": 'age' },
+                    { "data": 'home-town' },
+                    { "data": 'parents-no' }
+                ]
             });
+
+            //for console purposes
+            $.ajax({
+                url: 'fetch-data.php',
+                type: 'POST',
+                success: function (response) {
+                    console.log(response)
+                }
+            });
+
         });
     </script>
 
