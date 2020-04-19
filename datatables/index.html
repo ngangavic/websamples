@@ -7,8 +7,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css" <title>
-    Datatables</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <title>Datatables</title>
 </head>
 
 <body>
@@ -49,25 +49,39 @@
                 responsive: true,
                 serverSide: true,
                 ajax: {
-                    url: 'fetch-data.php',
-                    type: 'POST'
+                    url: 'fetch-data.php'
                 },
                 columns: [
-                    { "data": 'name' },
-                    { "data": 'class' },
-                    { "data": 'age' },
-                    { "data": 'home-town' },
-                    { "data": 'parents-no' }
+                    { data: 'name' },
+                    { data: 'class' },
+                    { data: 'age' },
+                    { data: 'home-town' },
+                    { data: 'parents-no' },
+                    {
+                        data: null,
+                        "sortable": false,
+                        "render": function (data, type, full) {
+                            return '<div class="btn btn-group"><button class="btn btn-warning btn-sm" id="edit-btn" >' + 'Edit' + '</button><button class="btn btn-danger btn-sm" id="delete-btn" >' + 'Delete' + '</button></div>';
+                        }
+                    }
                 ]
+
             });
 
+            //onclick events [start]
             var table = $('#student-table').DataTable();
 
-            $('#student-table').on('click', 'tr', function () {
-                var id = table.row(this).id();
-
-                alert('Clicked row id ' + id);
+            //delete btn
+            $('#student-table').on('click', '#delete-btn', function () {
+                var trid = $(this).closest('tr').attr('id');
+                alert('You want to delete row ' + trid + '?');
             });
+            //delete btn
+            $('#student-table').on('click', '#edit-btn', function () {
+                var trid = $(this).closest('tr').attr('id');
+                alert('You want to edit row ' + trid + '?');
+            });
+            //onclick events [end]
 
             //for console purposes
             $.ajax({
