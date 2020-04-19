@@ -27,149 +27,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- <tr>
-                        <td>John Doe </td>
-                        <td>Form 1</td>
-                        <td>15</td>
-                        <td>Nairobi</td>
-                        <td>+254735280022</td>
-                        <td>
-                            <div class="btn btn-group btn-group-sm">
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>John Doe </td>
-                        <td>Form 1</td>
-                        <td>15</td>
-                        <td>Nairobi</td>
-                        <td>+254735280022</td>
-                        <td>
-                            <div class="btn btn-group btn-group-sm">
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>John Doe </td>
-                        <td>Form 1</td>
-                        <td>15</td>
-                        <td>Nairobi</td>
-                        <td>+254735280022</td>
-                        <td>
-                            <div class="btn btn-group btn-group-sm">
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>John Doe </td>
-                        <td>Form 1</td>
-                        <td>15</td>
-                        <td>Nairobi</td>
-                        <td>+254735280022</td>
-                        <td>
-                            <div class="btn btn-group btn-group-sm">
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>John Doe </td>
-                        <td>Form 1</td>
-                        <td>15</td>
-                        <td>Nairobi</td>
-                        <td>+254735280022</td>
-                        <td>
-                            <div class="btn btn-group btn-group-sm">
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>John Doe </td>
-                        <td>Form 1</td>
-                        <td>15</td>
-                        <td>Nairobi</td>
-                        <td>+254735280022</td>
-                        <td>
-                            <div class="btn btn-group btn-group-sm">
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>John Doe </td>
-                        <td>Form 1</td>
-                        <td>15</td>
-                        <td>Nairobi</td>
-                        <td>+254735280022</td>
-                        <td>
-                            <div class="btn btn-group btn-group-sm">
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>John Doe </td>
-                        <td>Form 1</td>
-                        <td>15</td>
-                        <td>Nairobi</td>
-                        <td>+254735280022</td>
-                        <td>
-                            <div class="btn btn-group btn-group-sm">
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>John Doe </td>
-                        <td>Form 1</td>
-                        <td>15</td>
-                        <td>Nairobi</td>
-                        <td>+254735280022</td>
-                        <td>
-                            <div class="btn btn-group btn-group-sm">
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>John Doe </td>
-                        <td>Form 1</td>
-                        <td>15</td>
-                        <td>Nairobi</td>
-                        <td>+254735280022</td>
-                        <td>
-                            <div class="btn btn-group btn-group-sm">
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>John Doe </td>
-                        <td>Form 1</td>
-                        <td>15</td>
-                        <td>Nairobi</td>
-                        <td>+254735280022</td>
-                        <td>
-                            <div class="btn btn-group btn-group-sm">
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                            </div>
-                        </td>
-                    </tr> -->
+
                 </tbody>
             </table>
         </div>
@@ -201,6 +59,14 @@
                     { "data": 'home-town' },
                     { "data": 'parents-no' }
                 ]
+            });
+
+            var table = $('#student-table').DataTable();
+
+            $('#student-table').on('click', 'tr', function () {
+                var id = table.row(this).id();
+
+                alert('Clicked row id ' + id);
             });
 
             //for console purposes

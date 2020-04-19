@@ -16,7 +16,7 @@ while ($row = $result->fetch_array()) {
         "age" => $row['age'],
         "home-town" => $row['home_town'],
         "parents-no" => $row['parent_no'],
-        "id" => $row['id']
+        "DT_RowId" => $row['id']
     ));
 }
 
