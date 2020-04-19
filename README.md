@@ -14,7 +14,9 @@ Available modules
 
 6.PHP Send mail
 
-7. Shopping cart(Not complete)
+7.Shopping cart(Not complete)
+
+8.Datatables
 
 
 Requirements:
