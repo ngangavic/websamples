@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Mega Menu</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" >
 </head>
 <body>
@@ -16,14 +18,15 @@
     <a class="links" href="#">More Info</a>
     <div class="dropdown">
         <button class="megaButton">Projects ></button>
-        <div class="megaContent">
+
+        <div class="megaContent" id="contentOne">
             <div class="megaHeader">
                 <h2>Projects Menu</h2>
             </div>
             <div class="megaRow">
                 <div class="megaColumn">
                     <h3>Commercial</h3>
-                    <a class="links" href="#">Project 1</a>
+                    <a class="links" href="#" id="projectOne">Project 1</a>
                     <a class="links" href="#">Project 2</a>
                 </div>
                 <div class="megaColumn">
@@ -33,6 +36,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </nav>
 
