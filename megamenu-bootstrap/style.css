@@ -1,0 +1,36 @@
+.navigation{
+    border-top: 1px solid #E41321;
+    border-bottom: 1px solid #E41321;
+}
+
+.nav-link{
+    border-right: 1px solid #E3E3E2;
+    color: #E3E3E2;
+    font-size: 13px;
+    padding: 10px;
+}
+
+.nav-link:hover{
+    background-color: #E41321;
+    color: #ffffff;
+}
+
+.nav-item a:active{
+    background-color: #E41321;
+    color: #ffffff;
+}
+
+.nav-link a:hover{
+    color: #ffffff;
+}
+
+.news-item{
+    background-color: #E3E3E2;
+    color: #0000FF;
+    margin-top: 10px;
+   padding: 10px;
+}
+
+.news-menu{
+    border-top: 2px solid #c82333;
+}
